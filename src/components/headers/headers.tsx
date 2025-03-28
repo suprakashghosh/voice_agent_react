@@ -1,10 +1,11 @@
 import { memo, ReactNode, RefObject, useEffect, useRef, useState } from "react";
 
+
 function AppHeaders() {
   return (
     <div className="header" style={{ textAlign: "center" }}>
-      <h1>Your one stop problem resolution</h1>
-      <h2>Click on the play button below to start speaking to the customer care agent</h2>
+      <h1>Your one stop for problem resolution</h1>
+      <h2>Click on the play button below to start speaking to customer care</h2>
       < div style={{ display: "flex" }}>
         < div style={{
           border: "2px solid #ccc",
