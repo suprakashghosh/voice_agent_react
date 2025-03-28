@@ -22,7 +22,9 @@ import { Altair } from "./components/altair/Altair";
 import ControlTray from "./components/control-tray/ControlTray";
 import cn from "classnames";
 import  AppHeaders  from "./components/headers/headers";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { useLiveAPIContext } from "././contexts/LiveAPIContext";
+import { Content, GenerativeContentBlob, Part } from "@google/generative-ai";
 
 
 const API_KEY = process.env.REACT_APP_GEMINI_API_KEY as string;
@@ -32,6 +34,7 @@ if (typeof API_KEY !== "string") {
 
 const host = "generativelanguage.googleapis.com";
 const uri = `wss://${host}/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent`;
+
 
 function App() {
   // this video reference is used for displaying the active stream, whether that is the webcam or screen capture
@@ -49,7 +52,7 @@ function App() {
             <div className="main-app-area">
               {/* APP goes here */}
               <AppHeaders/>
-              <Altair />
+              <Altair/>
               <video
                 className={cn("stream", {
                   hidden: !videoRef.current || !videoStream,

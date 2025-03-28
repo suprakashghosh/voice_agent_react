@@ -5,13 +5,13 @@ function AppHeaders() {
   return (
     <div className="header" style={{ textAlign: "center" }}>
       <h1>Your one stop insurance advisor</h1>
-      <h2>Click on the <span style={{color: "blue"}}>play button</span> below and say hello to start speaking to our customer care agent</h2>
+      <h2>Click on the <span style={{color: "blue"}}>play button</span> below and start speaking to our agent</h2>
       < div style={{ display: "flex" }}>
         < div style={{
           border: "2px solid #ccc",
           borderRadius: "10px",
           padding: "10px",
-          width: "45%",
+          width: "85%",
           height: "300px",
           display: "flex",
           flexDirection: "column",
@@ -26,9 +26,9 @@ function AppHeaders() {
             textAlign: "left",
           }}>
             <li style={{ marginBottom: "8px" }}>&#8226; Adapts to the conversation seamlessly</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Has the ability to seamlessly Google Search</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Is mindful of interruptions from the customer</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Can transfer calls as needed</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Ability to seamlessly Google Search</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Is mindful of interruptions/pauses</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Can infer voice tone</li>
           </ul>
         </div>
 
@@ -36,7 +36,7 @@ function AppHeaders() {
           border: "2px solid #ccc",
           borderRadius: "10px",
           padding: "10px",
-          width: "45%",
+          width: "85%",
           height: "300px",
           display: "flex",
           flexDirection: "column",
@@ -53,7 +53,7 @@ function AppHeaders() {
           }}>
             <li style={{ marginBottom: "8px" }}>&#8226; More <a href="https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice#demo">natural sounding voices and pauses</a></li>
             <li style={{ marginBottom: "8px" }}>&#8226; Indian accent</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Company-specific knowledge and documentation</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Company-specific knowledge/documentation</li>
             <li style={{ marginBottom: "8px" }}>&#8226; Better maths and reasoning</li>
           </ul>
         </div>

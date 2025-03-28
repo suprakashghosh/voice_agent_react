@@ -158,31 +158,15 @@ function ControlTray({
 
   return (
     
-    <section
-      className="control-tray"
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <section className="control-tray">
+
+      
+
       <canvas style={{ display: "none" }} ref={renderCanvasRef} />
 
-      <div className={cn("connection-container", { connected })}>
-        <div className="connection-button-container">
-          <button
-            ref={connectButtonRef}
-            className={cn("action-button connect-toggle", { connected })}
-            onClick={connected ? disconnect : connect}
-            title="Click here to start your session"
-          >
-            <span className="material-symbols-outlined filled">
-              {connected ? "pause" : "play_arrow"}
-            </span>
-          </button>
-        </div>
-        <span className="text-indicator">
-          Connected to agent. Please start talking.
-        </span>
-      </div>
-
+      
       <nav className={cn("actions-nav", { disabled: !connected })}>
+        
         <button
           className={cn("action-button mic-button")}
           onClick={() => setMuted(!muted)}
@@ -198,11 +182,44 @@ function ControlTray({
           <AudioPulse volume={volume} active={connected} hover={false} />
         </div>
 
+        {/* {supportsVideo && (
+          <>
+            <MediaStreamButton
+              isStreaming={screenCapture.isStreaming}
+              start={changeStreams(screenCapture)}
+              stop={changeStreams()}
+              onIcon="cancel_presentation"
+              offIcon="present_to_all"
+            />
+            <MediaStreamButton
+              isStreaming={webcam.isStreaming}
+              start={changeStreams(webcam)}
+              stop={changeStreams()}
+              onIcon="videocam_off"
+              offIcon="videocam"
+            />
+          </>
+        )} */}
         {children}
       </nav>
+        
+      <div className={cn("connection-container", { connected })}>
+        <div className="connection-button-container">
+          <button
+            ref={connectButtonRef}
+            className={cn("action-button connect-toggle", { connected })}
+            onClick={connected ? disconnect : connect}
+            title="Click here to start your session">
+            <span className="material-symbols-outlined filled">
+              {connected ? "pause" : "play_arrow"}
+            </span>
+          </button>
+        </div>
+        <span className="text-indicator">Connected to agent. Please start talking.</span>
+      </div>
+
     </section>
   );
 }
-
 
 export default memo(ControlTray);
