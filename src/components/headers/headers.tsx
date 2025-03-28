@@ -52,6 +52,7 @@ function AppHeaders() {
             textAlign: "left",
           }}>
             <li style={{ marginBottom: "8px" }}>&#8226; More <a href="https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice#demo">natural sounding voices and pauses</a></li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Indian accent</li>
             <li style={{ marginBottom: "8px" }}>&#8226; Company-specific knowledge and documentation</li>
             <li style={{ marginBottom: "8px" }}>&#8226; Better maths and reasoning</li>
           </ul>
