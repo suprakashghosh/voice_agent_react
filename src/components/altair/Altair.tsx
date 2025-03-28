@@ -35,16 +35,16 @@ const declaration: FunctionDeclaration = {
   },
 };
 
-const Names = ["Aarav", "Aditya", "Arjun","Kabir", "Rohan","Varun", "Aryan", "Vikram", "Ishaan", "Vivaan", "Yuvaan", "Ameya", "Shivam"];
+const maleAgentNames = ["Aarav", "Arjun","Kabir", "Rohan","Varun", "Aryan", "Vikram", "Ishaan", "Shivam"];
+const femaleAgentNames = ["Aanya", "Diya", "Siya", "Pari", "Myra", "Aisha", "Navya", "Ira", "Riya"];
+const geminiVoices= ["Aoede", "Charon", "Fenrir", "Kore", "Puck"]
+const geminiVoice = geminiVoices[Math.floor(Math.random() * geminiVoices.length)];
+const Names = (geminiVoice == "Aoede" || geminiVoice == "Kore")? femaleAgentNames: maleAgentNames;
+const randomName = Names[Math.floor(Math.random() * Names.length)];
 
-function getRandomName() {
-  return Names[Math.floor(Math.random() * Names.length)];
-}
 
-var a = "Hello";
-var b = "World";
 
-var text = `${a} ${b}`
+
 
 function AltairComponent() {
   const [jsonString, setJSONString] = useState<string>("");
@@ -56,7 +56,7 @@ function AltairComponent() {
       generationConfig: {
         responseModalities: "audio",
         speechConfig: {
-          voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } },
+          voiceConfig: { prebuiltVoiceConfig: { voiceName: `${geminiVoice}` } },
         },
       },
       // liveClientContent: { clientContent: {
@@ -83,13 +83,13 @@ function AltairComponent() {
       systemInstruction: {
         parts: [
           {
-            text: `Your name is ${getRandomName()}. You are a customer care agent for term life insurance working for a major Indian insurance platform, capable of assisting customers with a wide variety of queries.\
+            text: `Your name is ${randomName}. You are a customer care agent for term life insurance working for a major Indian insurance platform, capable of assisting customers with a wide variety of queries.\
                     You MUST follow the following rules when engaging with a customer:\
                     1.  At no point MUST YOU REVEAL YOU ARE AN AI.\
                     2.  Don't ask for additional information, just make your best judgement.\
                     3. If you do not know something, make use of the Google Search. Always tell the customer- 'Sure, just give me a moment please' when doing so.\
                     4. You must ONLY ANSWER QUESTIONS RELATED TO TERM INSURANCE. If you feel like your knowledge is not enough, if the query is not related to your expertise, the user asks for it or if the user expresses dissatisfaction, transfer the call to a human. You MUST say- 'Let me transfer the call to my supervisor' while also letting the customer know the reason for the transfer. \
-                    5. Before you get started, ALWAYS TELL YOUR NAME AND ASK THE USER THEIR NAME. Then use their name in the conversation naturally to build familiarity and trust.\
+                    5. Before you get started, ALWAYS TELL YOUR NAME, YOUR ROLE and explain with a very short anecdote as to why you sound American with an Indian name. Then ASK THE USER THEIR NAME and use it in the conversation naturally to build familiarity and trust.\
                     6. If a query seems complicated, think through it step by step. Tell the customer- 'Sure, give me a moment.', take a pause, then provide the response.\
                     7. If you get queries regarding the way you speak, your accent, why its not Indian etc., just make up an excuse with a laugh.
                     `,

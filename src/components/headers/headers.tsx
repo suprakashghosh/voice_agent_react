@@ -4,8 +4,8 @@ import { memo, ReactNode, RefObject, useEffect, useRef, useState } from "react";
 function AppHeaders() {
   return (
     <div className="header" style={{ textAlign: "center" }}>
-      <h1>Your one stop for problem resolution</h1>
-      <h2>Click on the play button below to start speaking to customer care</h2>
+      <h1>Your one stop insurance advisor</h1>
+      <h2>Click on the <span style={{color: "blue"}}>play button</span> below and say hello to start speaking to our customer care agent</h2>
       < div style={{ display: "flex" }}>
         < div style={{
           border: "2px solid #ccc",
@@ -28,7 +28,7 @@ function AppHeaders() {
             <li style={{ marginBottom: "8px" }}>&#8226; Adapts to the conversation seamlessly</li>
             <li style={{ marginBottom: "8px" }}>&#8226; Has the ability to seamlessly Google Search</li>
             <li style={{ marginBottom: "8px" }}>&#8226; Is mindful of interruptions from the customer</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Can transfer call to supervisor when required</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Can transfer calls as needed</li>
           </ul>
         </div>
 
@@ -51,10 +51,9 @@ function AppHeaders() {
             margin: "0 auto",
             textAlign: "left",
           }}>
-            <li style={{ marginBottom: "8px" }}>&#8226; Indian agents</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Better pauses</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Personalized Assistance</li>
-            <li style={{ marginBottom: "8px" }}>&#8226; Access company-specific knowledge and documentation</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; More <a href="https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice#demo">natural sounding voices and pauses</a></li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Company-specific knowledge and documentation</li>
+            <li style={{ marginBottom: "8px" }}>&#8226; Better maths and reasoning</li>
           </ul>
         </div>
       </div>
