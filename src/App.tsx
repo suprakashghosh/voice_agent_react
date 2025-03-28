@@ -22,6 +22,7 @@ import { Altair } from "./components/altair/Altair";
 import ControlTray from "./components/control-tray/ControlTray";
 import cn from "classnames";
 import  AppHeaders  from "./components/headers/headers";
+import { Analytics } from "@vercel/analytics/react"
 
 
 const API_KEY = process.env.REACT_APP_GEMINI_API_KEY as string;
