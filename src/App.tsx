@@ -45,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <Analytics />
       <LiveAPIProvider url={uri} apiKey={API_KEY}>
         <div className="streaming-console">
           {/* <SidePanel /> */}
